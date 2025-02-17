@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+.main {
+	width : 1000px;
+	margin : 50px auto;
+	min-height : 500px;
+}
+
+.user-table {
+	width : 100%;
+	border-collapse : collapse;
+}
+
+.user-table th{
+	background-color : rgb(224,224,224);
+	padding : 10px;
+	border-top : 2px solid rgb(128, 64, 64);
+	border-bottom : 1px solid #ddd;
+	text-align: left;
+}
+.user-table td {
+	padding : 10px;
+	border-bottom : 1px solid #ddd;
+}
+.search-form{
+	width : 350px;
+	margin : 10px auto;
+}
+.search-select{
+	padding : 8px;
+	border-radius : 5px;
+}
+.search-input {
+	padding : 8px;
+	border-radius : 5px;
+}
+.search-button {
+	padding : 8px;
+	border-radius : 5px;
+}
+.register {
+	width : 300px;
+	margin : 10px auto;
+}
+.register:active{
+color: white;
+}

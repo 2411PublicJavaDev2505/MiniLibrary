@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+main{
+	width: 1000px;
+	margin: 50px auto;
+}
+
+.book-detail{
+	border-top: 2px solid #045;
+	border-bottom: 2px solid #045;
+	background-color: #fff;
+}
+
+.book-header{
+	padding: 20px;
+	border-bottom: 1px solid #ddd;
+}
+
+.book-title{
+	font-size: 24px;
+	color: rgb(128, 64, 64);
+	margin-bottom: 15px;
+}
+
+.book-info{
+	display: flex;
+	color: #666;
+	font-size: 14px;
+	gap: 20px;
+}
+
+
+.button-group{
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.btn{
+	display: inline-block;
+	padding: 8px 20px;
+	border: 1px solid rgb(128, 64, 64);
+	background-color: rgb(128, 64, 64);
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.btn:hover{
+	background-color: #fff;
+	color: rgb(128, 64, 64);
+}
+
+
+

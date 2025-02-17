@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+#container{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;	
+	
+}
+
+.my_bg{
+	width: 1000px;
+	height: 700px;
+	background-image: url("/resources/images/Library.jpg");
+	
+}
+        
+
+        
+        

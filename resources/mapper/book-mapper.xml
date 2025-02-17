@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BookMapper">
+	<resultMap type="com.library.book.vo.Book" id="bookResultMap">
+		<id     property = "bookNo" column = "BOOK_NO"/>
+		<result property = "bookName" column = "BOOK_NAME"/>
+		<result property = "bookWriter" column = "BOOK_WRITER"/>
+		<result property = "bookPrice" column = "BOOK_PRICE"/>
+		<result property = "publisher" column = "PUBLISHER"/>
+		<result property = "genre" column = "GENRE"/>
+	</resultMap>
+	<select id="selectList" resultMap = "bookResultMap">
+		SELECT * FROM BOOK ORDER BY BOOK_NO
+	</select>
+	<insert id="addBook">
+		INSERT INTO BOOK
+		VALUES(SEQ_BOOK_NO.NEXTVAL, #{bookName}, #{bookWriter}, #{bookPrice}, #{publisher}, #{genre})
+	</insert>
+	<insert id = "deleteBook">
+		DELETE FROM BOOK WHERE BOOK_NO = #{bookNo}
+	</insert>
+	<select id="selectSearchList" resultMap="bookResultMap">
+		SELECT * FROM BOOK WHERE BOOK_NO = #{searchKeyword}
+	</select>
+	<select id="selectOneByNo" resultMap = "bookResultMap">
+		SELECT * FROM BOOK WHERE BOOK_NO = #{bookNo}
+	</select>
+	
+	<select id="getTotalCount" resultType="_int">
+  		SELECT COUNT(*) FROM BOOK
+  	</select>
+	
+</mapper>

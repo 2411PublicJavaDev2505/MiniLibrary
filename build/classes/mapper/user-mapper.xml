@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace = "UserMapper">
+  	<resultMap type="com.library.user.model.vo.User" id="userResultMap">
+  		<id  property ="userId" column ="USER_ID"/>
+  		<result  property = "userNo" column = "USER_NO"/>
+  		<result property = "userName" column = "USER_NAME"/>
+  		<result property = "age" column = "USER_AGE"/>
+  		<result property = "userAddr" column = "ADDR"/>
+  		<result property = "gender" column = "GENDER"/>
+  		<result property = "enrollDate" column = "ENTOLL_DATE"/>
+   	</resultMap>
+  	<insert id="insertUser">
+  		INSERT INTO CUSTOMER
+  		VALUES(SEQ_USER_NO.NEXTVAL, #{userId}, #{userName}, #{age}, #{userAddr}, #{gender},DEFAULT)
+  	</insert>
+  	<update id="updateUser">
+  		UPDATE CUSTOMER SET USER_NAME = #{userName}, USER_AGE = #{age}, ADDR = #{userAddr}, GENDER = #{gender} WHERE USER_ID = #{userId}
+  	</update>
+  	<delete id="deleteUser">
+  		DELETE FROM CUSTOMER WHERE USER_ID = #{userId}
+  	</delete>
+  	
+  	<select id="selectList" resultMap = "userResultMap">
+  		SELECT * FROM CUSTOMER ORDER BY USER_NO
+  	</select>
+  	
+  	<select id="selectById" resultMap = "userResultMap">
+  		SELECT * FROM CUSTOMER WHERE USER_ID = #{userId}
+  	</select>
+  	
+  	<select id="selectSearchList" resultMap = "userResultMap">
+  		SELECT * FROM CUSTOMER
+  		<where>
+  			<if test="searchCondition == 'name'">
+  				USER_NAME LIKE '%'||#{searchKeyword}||'%'
+  			</if>
+  			<if test="searchCondition == 'id'">
+  				USER_ID LIKE '%'||#{searchKeyword}||'%'
+  			</if>
+  		</where>
+  	</select>
+  	
+  	<select id="searchOneByNo" resultMap="userResultMap">
+		SELECT * FROM CUSTOMER WHERE USER_ID = #{userId}
+	</select>
+	
+	  	<select id="getTotalCount" resultType="_int">
+  		SELECT COUNT(*) FROM CUSTOMER
+  	</select>
+	
+	
+  </mapper>

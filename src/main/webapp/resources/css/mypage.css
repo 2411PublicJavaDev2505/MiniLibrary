@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+main {
+	width : 40%;
+	padding : 50px 0;
+	display: flex;
+	align-items: center;
+	display : flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin : auto;
+	margin-top : 35px;
+	box-shadow : 0 0 20px rgba(140, 19, 1, 0.77);
+	border-radius : 10px;
+}
+
+.container {
+	width : 1000px;
+	margin : 0 auto;
+	display : flex;
+	gap : 30px;
+}
+
+.title {
+	width : 44%;
+	border-bottom : 2px solid #551b00;
+	padding-bottom : 15px;
+	margin: 0 0 30px 0;
+}
+.info-group {
+	margin-bottom : 25px;
+}
+.info-group label {
+	display : block;
+	margin-bottom : 8px;
+	color : #666;
+	font-weight : 500;
+}
+.info-group input {
+	width : 100%;
+	padding : 12px;
+	border : 1px solid #ddd;
+	border-radius : 5px;
+	font-size : 16px;
+}
+.radio-group {
+	display : flex;
+	gap : 20px;
+}
+.radio-group label {
+	display : flex;
+	gap : 8px;
+	align-items : center;
+}
+.save-button{
+	background-color : #551b00;
+	color : #fff;
+	margin: 10px 10px 10px 0;
+	padding : 15px 30px;
+	border-radius : 5px;
+	border : none;
+	cursor : pointer;
+	font-size : 15px;
+	transition : background-color 0.5s;
+}
+.del-button {
+	background-color : #551b00;
+	color : #fff;
+	margin-right : 20px;
+	padding : 15px 30px;
+	border-radius : 5px;
+	border : none;
+	cursor : pointer;
+	font-size : 15px;
+	transition : background-color 0.5s;
+}
